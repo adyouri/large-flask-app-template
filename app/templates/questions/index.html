@@ -6,5 +6,33 @@
     </span>
     <div class="questions">
         <h2>Questions Blueprint</h2>
+
+        <div class="question">
+            <div class="new-question">
+                <form method="POST">
+                    <p>
+                        <textarea id="q-content"
+                                name="content"
+                                placeholder="Question"
+                                cols="30" rows="3"></textarea>
+                    </p>
+                    <textarea id="q-answer"
+                            name="answer"
+                            placeholder="Answer"
+                            cols="30" rows="3"></textarea>
+                    <p><input type="submit"></p>
+                </form>
+            </div>
+            <div class="questions-list">
+                {% for question in questions %}
+                    <div class="question">
+                        <h4>{{ question.content }}</h4>
+                        <p>{{ question.answer }}</p>
+                        <hr>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
     </div>
 {% endblock %}

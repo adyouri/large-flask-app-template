@@ -4,5 +4,21 @@
     <span class="title"><h1>{% block title %} The Posts Page {% endblock %}</h1></span>
     <div class="content">
         <h2>This is the posts Flask blueprint</h2>
+        {% for post in posts %}
+            <div class="post">
+                <p><b>#{{ post.id }}</b></p>
+                <p class="title">
+                    <b>
+                        <a href="#">
+                            {{ post.title }}
+                        </a>
+                    </b>
+                </p>
+                <div class="content">
+                    <p>{{ post.content }}</p>
+                </div>
+                <hr>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
